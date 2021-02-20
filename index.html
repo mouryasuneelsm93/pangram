@@ -11,8 +11,10 @@
 <body>
     <script>
         Pangram();
+
         function Pangram() {
-            var x = prompt("Enter the character");
+            var y = prompt("Enter the character");
+            var x = y.toLowerCase();
             if (x.length == 0) {
                 alert("Please Enter Any value");
                 Pangram();
