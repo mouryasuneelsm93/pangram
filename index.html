@@ -13,24 +13,29 @@
         Pangram();
         function Pangram() {
             var x = prompt("Enter the character");
-            var i, j, count = 0;
-            var set = x.split(/[$ & +,: ; = ? @# | '<>.-^*()%!]/).join("").split("");
-            var arr = new Set(set);
-            var filterarr = [...arr];
-            var pat = "abcdefghijklmnopqrstuvwxyz";
-            arr2 = Array.from(pat);
-            filterarr.sort();
-            for (i = 0; i < arr2.length; i++) {
-                if (arr2[i] == filterarr[i]) {
-                    count++;
-                }
-            }
-            if (count == 26) {
-                alert("The String is a Pangram");
+            if (x.length == 0) {
+                alert("Please Enter Any value");
                 Pangram();
             } else {
-                alert("The String is not a Pangram");
-                Pangram();
+                var i, j, count = 0;
+                var set = x.split(/[$ & +,: ; = ? @# | '<>.-^*()%!]/).join("").split("");
+                var arr = new Set(set);
+                var filterarr = [...arr];
+                var pat = "abcdefghijklmnopqrstuvwxyz";
+                arr2 = Array.from(pat);
+                filterarr.sort();
+                for (i = 0; i < arr2.length; i++) {
+                    if (arr2[i] == filterarr[i]) {
+                        count++;
+                    }
+                }
+                if (count == 26) {
+                    alert("The String is a Pangram");
+                    Pangram();
+                } else {
+                    alert("The String is not a Pangram");
+                    Pangram();
+                }
             }
         }
     </script>
